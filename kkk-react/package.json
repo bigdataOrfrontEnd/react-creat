@@ -1,0 +1,39 @@
+{
+  "name": "kkk-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "kkk-react": "./lib/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "connect-history-api-fallback": "^2.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "html-webpack-plugin": "^5.5.3",
+    "http-proxy": "^1.18.1",
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^2.7.6",
+    "mkdirp": "^3.0.1",
+    "mocker-api": "^2.9.8",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "ts-node": "^10.9.1",
+    "webpack": "^5.89.0",
+    "webpack-dev-middleware": "^6.1.1",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@soda/friendly-errors-webpack-plugin": "^1.8.1"
+  }
+}
