@@ -19,8 +19,8 @@ const {
   isDev,
 } = require("./defaults");
 const { resolveApp } = require("./utils");
-const [commonDeps, systemJsCopy] = require("./deps");
-const { pairs_to_object } = require(" ./utils/pairsToobject");
+const { commonDeps, systemJsCopy } = require("./deps");
+const { pairs_to_object } = require("./utils/pairsToobject");
 const {
   getHTMLHeadScripts,
   getEntryCodeAhead,
@@ -29,8 +29,10 @@ const {
   getwebpackplugins,
 } = require("./plugin");
 // scaffold antd 主题配置文件
-const theme = require(resolveApp("antdtheme", true));
+// const theme = require(resolveApp("antdtheme", true));
+console.log("111", process.env.CONFIG_FILE);
 const projectConfig = require(process.env.CONFIG_FILE); // 项目配置文件(已合并)
+console.log("222", projectConfig);
 themeConfig = projectConfig.themeConfig; // 项目主题配置
 const defaultTheme = themeConfig.defaultTheme; // 默认主题
 const defineplugin = projectConfig.defineplugin || {};
@@ -222,7 +224,8 @@ let config = {
           { loader: require.resolve("css-loader"), options: { url: false } },
           {
             loader: require.resolve("less-loader"),
-            options: { modifyVars: theme, javascriptEnabled: true },
+            //TODO主题加载
+            // options: { modifyVars: theme, javascriptEnabled: true },
           },
         ],
       },

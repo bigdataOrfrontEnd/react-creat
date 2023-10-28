@@ -1,3 +1,7 @@
+/**
+ * 文件作用: 这个文件主要是将项目中的配置文件进行合并
+ * 
+ * /
 // path.resolve([…paths])里的每个参数都类似在当前目录执行一个cd操作
 /**fs.existssync
  * 以同步的方法检测目录是否存在。
@@ -24,8 +28,9 @@ module.exports = (function () {
     //path.resolve如果没有传入 path 片段，则返回当前工作目录的绝对路径;
     //configPath:D:\workspace\cli-view\config/config
     const configPath = path.resolve("config/config");
-    // console.log(configPath);D:\workspace\cli-view\config\config
+    console.log("222configPath", configPath); //D:\workspace\cli-view\config\config
     let defaultConfigPath = path.resolve("app/config.default.js");
+    console.log("221defaultConfigPath", defaultConfigPath);
     if (
       // existsSync以同步的方法检测目录是否存在。如果目录存在 返回 true ，如果目录不存在 返回false
       fs.existsSync(configPath + ".ts") ||
@@ -33,6 +38,9 @@ module.exports = (function () {
     ) {
       config = require(configPath);
       if (!fs.existsSync(defaultConfigPath)) {
+        console.log(
+          "如果项目中没有app/config.default.js,就会使用scaffold中的文件"
+        );
         //把全部给定的path片段连接到一起，并规范化生成的路径
         defaultConfigPath = path.resolve(
           // `node_modules/${config.systemConfig.npmscope}/quantex-scaffold`, //TODO这个部署的时候再添加
@@ -40,6 +48,7 @@ module.exports = (function () {
         );
       }
       defaultConfig = require(defaultConfigPath);
+      console.log("加载默认配置,也就是app/config.default.js");
       config = merge(cloneDeep(defaultConfig), config);
     } else {
       console.log(`${configPath}文件不存在`);

@@ -7,7 +7,7 @@ const path = require("path");
 // 通过这个模块，你可以在 Node.js 应用程序中执行外部命令，比如运行系统命令或者其他可执行文件。
 const { exec } = require("child_process");
 const chalk = require("chalk");
-const { resolveApp } = require("../config/utils/index");
+const { resolveApp } = require("../config/utils");
 /**
  * 1. 监听app/containers/page目录下的文件变化
  * 2.只需要关注新增文件事件
@@ -53,6 +53,7 @@ watcher.on("unlink", handleFileAddOrRemove);
 
 // 监听配置文件变化，重启webpack-dev-serve
 //参考: https://blog.cloudlboost.io/reloading-the-express-server-without-nodemon-e7fa69294a96
+//Todo配置文件按照ts加载
 const watcher3 = chokidar.watch(resolveApp("config/config.ts"), {
   persistent: true,
   ignoreInitial: true,

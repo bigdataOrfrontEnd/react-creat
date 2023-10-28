@@ -8,5 +8,8 @@
     "start": "kkk-react start"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
 }

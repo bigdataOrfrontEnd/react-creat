@@ -1,0 +1,15 @@
+{
+  "name": "malita",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "malita": "./bin/malita.js"
+  },
+  "scripts": {
+    "hello": "malita"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -26,6 +26,7 @@
     "mkdirp": "^3.0.1",
     "mocker-api": "^2.9.8",
     "progress-bar-webpack-plugin": "^2.1.0",
+    "react": "^18.2.0",
     "ts-node": "^10.9.1",
     "webpack": "^5.89.0",
     "webpack-dev-middleware": "^6.1.1",
@@ -34,6 +35,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@soda/friendly-errors-webpack-plugin": "^1.8.1"
+    "@soda/friendly-errors-webpack-plugin": "^1.8.1",
+    "cross-env": "^7.0.3"
   }
 }

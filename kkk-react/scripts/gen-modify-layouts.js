@@ -6,7 +6,7 @@ fs.writeFileSync(
   resolveApp("app/.tmp/modify-layouts.js", true),
   "export default layouts => {\n" +
     getModifyLayouts()
-      .map((item) => "require( `$(item) `).default(layouts);")
+      .map((item) => "require( `${item}`).default(layouts);")
       .join("\t") +
     "\n};"
 );
